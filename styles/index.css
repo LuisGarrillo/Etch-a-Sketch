@@ -11,15 +11,14 @@ body {
 }
 
 .cell {
-    background-color: rgb(109, 134, 172);
-    border: 1px solid rgb(38, 47, 73);
+    border: 1px solid white;
 }
 
 #grid {
-    background-color: rgb(58, 79, 110);
-    width: 960px;
-    height: 960px;
-    border-radius: 25px;
+    background-color: white;
+    width: 992px;
+    height: 992px;
     display: flex;
     flex-wrap: wrap;
+    padding: 16px;
 }
