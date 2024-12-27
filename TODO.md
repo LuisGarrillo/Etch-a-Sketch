@@ -1,6 +1,6 @@
-1- [] Create 16x16 grid Webpage
-    1.1- [] Create cell making function
-    1.2- [] Create grid making algorithm
+1- [x] Create 16x16 grid Webpage
+    1.1- [x] Create cell making function
+    1.2- [x] Create grid making algorithm
 
 2- [] Add hover effect to each cell
 
