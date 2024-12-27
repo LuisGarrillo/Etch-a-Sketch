@@ -3,18 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="./styles/index.css" rel="stylesheet">
-        <script src="./scripts/index.js"></script>
         <title>Etch-A-Skecth</title>
+
+        <link href="./styles/fonts.css" rel="stylesheet">
+        <link href="./styles/index.css" rel="stylesheet">
+        
+        <script src="./scripts/index.js"></script>
     </head>
     <body>
-        <div>
+        <div class="header">
             <h1>
-                Etch-A-Skecth
+                Etch A Skecth
             </h1>
+            <div class="size-modifier">
+                <input id="size" type="number" value="16">
+                <button id="size-button">Change grid size!</button>
+            </div>
         </div>
-        <div id="grid">
-
+        <div class="grid-wrapper">
+            <h4 id="grid-title">Hover your mouse!</h4>
+            <div id="grid"></div>
         </div>
     </body>
 </html>
