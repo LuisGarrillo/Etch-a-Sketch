@@ -2,7 +2,7 @@
     1.1- [x] Create cell making function
     1.2- [x] Create grid making algorithm
 
-2- [] Add hover effect to each cell
+2- [x] Add hover effect to each cell
 
 3- [] Add a field for specifying the grid dimensions (Max of 100)
     3.1- [] Create grid clearing function
