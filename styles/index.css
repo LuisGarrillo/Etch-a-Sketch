@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -7,18 +9,73 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: rgb(38, 47, 73);
-    color: rgb(109, 134, 172);
+    color: rgb(192, 211, 240);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    width: 992px;
+}
+
+.size-modifier input {
+    width: 75px;
+    height: 100%;
+
+    font-size: 23px;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+}
+
+.size-modifier button {
+    height: 100%;
+    width: 200px;
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: rgb(38, 47, 73);
+    color: white;
+    font-size: 23px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.size-modifier button:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: white;
+    color: rgb(38, 47, 73);
 }
 
 .cell {
     border: 1px solid white;
 }
 
-#grid {
+.grid-wrapper {
     background-color: white;
     width: 992px;
-    height: 992px;
+    height: 1020px;
     display: flex;
     flex-wrap: wrap;
     padding: 16px;
+    border-radius: 10px;
 }
+
+.grid-wrapper h4 {
+    width: 100%;
+    text-align: center;
+    font-size: 23px;
+    margin-bottom: 5px;
+    color: rgb(38, 47, 73);
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 960px;
+    height: 960px;
+}
+
