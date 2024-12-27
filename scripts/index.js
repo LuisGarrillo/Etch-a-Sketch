@@ -1,4 +1,6 @@
 let size = 16;
+let sizeButton;
+let grid;
 
 function hoverCell(event) {
     let opacityValue = parseFloat(event.target.style.opacity);
@@ -17,12 +19,29 @@ function createCell() {
 }
 
 function createGrid() {
-    let grid = document.getElementById("grid");
+    let cell = createCell();
     for (let i = 0; i < size ** 2; i++)
         grid.append(createCell());
 }
 
 function loadData() {
+    sizeButton = document.getElementById("size-button");
+    grid = document.getElementById("grid");
+
+    sizeButton.addEventListener("click", updateGrid);
+
+    createGrid();
+}
+
+function updateGrid() {
+    let newSize = parseInt(document.getElementById("size").value)
+    if (newSize > 100 || newSize < 1) {
+        alert("The size value must be greater than 0 and less or equal than 100!");
+        return
+    }
+    size = newSize;
+    console.log(size);
+    grid.replaceChildren();
     createGrid();
 }
 
