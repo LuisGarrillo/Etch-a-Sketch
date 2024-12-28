@@ -42,7 +42,7 @@ body {
     border-radius: 5px;
 }
 
-.size-modifier button, .header > div > button {
+.size-modifier button, .header > div > button, .header > div> .reset-button {
     height: 100%;
     width: 200px;
     border: 2px solid white;
@@ -54,11 +54,15 @@ body {
     text-align: center;
 }
 
-.size-modifier button:hover, .header > div > button:hover {
+.size-modifier button:hover, .header > div > button:hover, .header > div> .reset-button:hover {
     transition: 0.2s;
     cursor: pointer;
     background-color: white;
     color: rgb(38, 47, 73);
+}
+
+.header > div> .reset-button {
+    width: 100px;
 }
 
 .cell {

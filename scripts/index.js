@@ -1,8 +1,9 @@
 let size = 16;
 let sizeButton;
 let randomizeButton;
+let resetButton;
 let grid;
-const colors = ["black", "red", "blue", "yellow", "purple", "green", "orange"];
+const colors = ["red", "blue", "yellow", "purple", "green", "orange"];
 
 function hoverCell(event) {
     let opacityValue = parseFloat(event.target.style.opacity);
@@ -31,10 +32,12 @@ function createGrid(random) {
 function loadData() {
     sizeButton = document.getElementById("size-button");
     randomizeButton = document.getElementById("randomize-button");
+    resetButton = document.getElementById("reset-button");
     grid = document.getElementById("grid");
 
     sizeButton.addEventListener("click", updateGrid);
     randomizeButton.addEventListener("click", randomizeGrid);
+    resetButton.addEventListener("click", clearGrid);
 
     createGrid();
 }
@@ -52,7 +55,11 @@ function updateGrid(random=false) {
 }
 
 function randomizeGrid(){
-    updateGrid(true);
+    updateGrid(random=true);
+}
+
+function clearGrid() {
+    updateGrid();
 }
 
 

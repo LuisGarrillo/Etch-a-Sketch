@@ -8,6 +8,6 @@
     3.1- [x] Create grid clearing function
     3.2- [x] Add input validation
 
-4- [] Extra features
-    4.1- [] Make each cell a random color
+4- [x] Extra features
+    4.1- [x] Make each cell a random color
     4.2- [x] Darken a cell by 10% with each interaction
