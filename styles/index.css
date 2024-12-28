@@ -19,6 +19,18 @@ body {
     width: 992px;
 }
 
+.header div, .size-modifier {
+    display: flex;
+}
+
+.header > div {
+    gap: 20px;
+}
+
+.size-modifier {
+    gap: 5px;
+}
+
 .size-modifier input {
     width: 75px;
     height: 100%;
@@ -30,7 +42,7 @@ body {
     border-radius: 5px;
 }
 
-.size-modifier button {
+.size-modifier button, .header > div > button {
     height: 100%;
     width: 200px;
     border: 2px solid white;
@@ -42,7 +54,7 @@ body {
     text-align: center;
 }
 
-.size-modifier button:hover {
+.size-modifier button:hover, .header > div > button:hover {
     transition: 0.2s;
     cursor: pointer;
     background-color: white;
