@@ -1,39 +1,45 @@
 let size = 16;
 let sizeButton;
+let randomizeButton;
 let grid;
+const colors = ["black", "red", "blue", "yellow", "purple", "green", "orange"];
 
 function hoverCell(event) {
     let opacityValue = parseFloat(event.target.style.opacity);
     event.target.style.opacity = ((opacityValue + 0.1 <= 1) ? opacityValue + 0.1 : 1).toString();
 }
 
-function createCell() {
+function createCell(random) {
     let newCell = document.createElement("div");
     newCell.classList.add("cell");
     newCell.style.width = `${960 / size}px`;
     newCell.style.height = `${960 / size}px`;
     newCell.style.opacity = 0;
-    newCell.style.backgroundColor = "black";
+
+    newCell.style.backgroundColor = (random) ? colors[Math.floor(Math.random() * colors.length)] : "black";
+
     newCell.addEventListener("mouseover", hoverCell);
     return newCell;
 }
 
-function createGrid() {
+function createGrid(random) {
     let cell = createCell();
     for (let i = 0; i < size ** 2; i++)
-        grid.append(createCell());
+        grid.append(createCell(random));
 }
 
 function loadData() {
     sizeButton = document.getElementById("size-button");
+    randomizeButton = document.getElementById("randomize-button");
     grid = document.getElementById("grid");
 
     sizeButton.addEventListener("click", updateGrid);
+    randomizeButton.addEventListener("click", randomizeGrid);
 
     createGrid();
 }
 
-function updateGrid() {
+function updateGrid(random=false) {
     let newSize = parseInt(document.getElementById("size").value)
     if (newSize > 100 || newSize < 1) {
         alert("The size value must be greater than 0 and less or equal than 100!");
@@ -42,7 +48,13 @@ function updateGrid() {
     size = newSize;
     console.log(size);
     grid.replaceChildren();
-    createGrid();
+    createGrid(random);
 }
+
+function randomizeGrid(){
+    updateGrid(true);
+}
+
+
 
 document.addEventListener("DOMContentLoaded", loadData);
