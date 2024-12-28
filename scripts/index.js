@@ -24,7 +24,6 @@ function createCell(random) {
 }
 
 function createGrid(random) {
-    let cell = createCell();
     for (let i = 0; i < size ** 2; i++)
         grid.append(createCell(random));
 }
@@ -35,18 +34,18 @@ function loadData() {
     resetButton = document.getElementById("reset-button");
     grid = document.getElementById("grid");
 
-    sizeButton.addEventListener("click", updateGrid);
+    sizeButton.addEventListener("click", clearGrid);
     randomizeButton.addEventListener("click", randomizeGrid);
     resetButton.addEventListener("click", clearGrid);
 
-    createGrid();
+    createGrid(random=false);
 }
 
-function updateGrid(random=false) {
-    let newSize = parseInt(document.getElementById("size").value)
+function updateGrid(random) {
+    let newSize = parseInt(document.getElementById("size").value);
     if (newSize > 100 || newSize < 1) {
         alert("The size value must be greater than 0 and less or equal than 100!");
-        return
+        return;
     }
     size = newSize;
     console.log(size);
@@ -59,9 +58,7 @@ function randomizeGrid(){
 }
 
 function clearGrid() {
-    updateGrid();
+    updateGrid(random=false);
 }
-
-
 
 document.addEventListener("DOMContentLoaded", loadData);
